@@ -1,0 +1,4 @@
+.vs
+/webapi/bin/*
+/webapi/obj/*
+/webapi/Logs/*
