@@ -133,8 +133,8 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="AuthAttributes\ApiAuthorizeAttribute.cs" />
-    <Compile Include="AuthAttributes\ValidateModelAttribute.cs" />
+    <Compile Include="Attributes\ApiAuthorizeAttribute.cs" />
+    <Compile Include="Attributes\ValidateModelAttribute.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\TokenController.cs" />
     <Compile Include="Global.asax.cs">

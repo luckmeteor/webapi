@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using webapi.AuthAttributes;
+using webapi.Attributes;
 using webapi.Models;
 namespace webapi.Controllers
 {

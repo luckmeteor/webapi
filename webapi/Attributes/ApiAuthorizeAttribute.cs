@@ -12,7 +12,7 @@ using System.Net;
 using System.Net.Http;
 using JWT.Algorithms;
 
-namespace webapi.AuthAttributes
+namespace webapi.Attributes
 {
     /// <summary>
     /// 身份认证拦截器

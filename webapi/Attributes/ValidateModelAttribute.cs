@@ -8,7 +8,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using System.Web.Http.ModelBinding;
 
-namespace webapi.AuthAttributes
+namespace webapi.Attributes
 {
     public class ValidateModelAttribute : ActionFilterAttribute
     {
