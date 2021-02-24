@@ -18,4 +18,40 @@ namespace webapi.Models
         public string phone { get; set; }
         public string filed5 { get; set; }
     }
+
+    public class User
+    {
+        public string name { get; set; }
+        public int Age { get; set; }
+        public string Sex { get; set; }
+        public string like { get; set; }
+    }
+
+    public class UserDto
+    {
+        public string name { get; set; }
+        public int UserAge { get; set; }
+        public string UserSex { get; set; }
+        public string like { get; set; }
+    }
+    public class Cource
+    {
+        public string ID { get; set; }
+        public string CourceName { get; set; }
+        public double Grade { get; set; }
+    }
+    public class StudentDto
+    {
+        public string ID { get; set; }
+        public string NAME { get; set; }
+        public string CourceName { get; set; }
+    }
+    public class Student
+    {
+        public string ID { get; set; }
+        public string NAME { get; set; }
+        public int AGE { get; set; }
+        public string CID { get; set; }
+        public Cource Cource { get; set; }
+    }
 }

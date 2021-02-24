@@ -48,6 +48,14 @@
       <HintPath>..\packages\JWT.8.0.0\lib\net40\JWT.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Mapster, Version=7.1.3.0, Culture=neutral, PublicKeyToken=2f39883af23c29a8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mapster.7.1.3\lib\net45\Mapster.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mapster.Core, Version=1.1.2.0, Culture=neutral, PublicKeyToken=e64997d676a9c1d3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mapster.Core.1.1.2\lib\net45\Mapster.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -142,6 +150,7 @@
     </Compile>
     <Compile Include="Helper\GetUserAgentInfo.cs" />
     <Compile Include="Helper\RegValidationTypes.cs" />
+    <Compile Include="Helper\UserDtoRegister.cs" />
     <Compile Include="Models\AuthInfo.cs" />
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\LoginRequest.cs" />
