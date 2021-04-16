@@ -14,22 +14,48 @@ namespace webapi.Attributes
     {
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
-            if (actionContext.ModelState.IsValid == false)
+            //if (actionContext.ModelState.IsValid == false)
+            //{
+            //    //actionContext.Response = actionContext.Request.CreateErrorResponse(
+            //    //    HttpStatusCode.BadRequest, actionContext.ModelState);
+            //    var errors = new Dictionary<string, IEnumerable<string>>();
+            //    foreach (KeyValuePair<string, ModelState> keyValue in actionContext.ModelState)
+            //    {
+            //        errors[keyValue.Key] = keyValue.Value.Errors.Select(e => e.ErrorMessage);
+            //    }
+            //    actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.BadRequest, new
+            //    {
+            //        code = HttpStatusCode.BadRequest,//返回客户端的状态码
+            //        success = false,
+            //        error = errors//显示验证错误的信息
+            //    });
+            //}
+            if (!actionContext.ModelState.IsValid)
             {
-                //actionContext.Response = actionContext.Request.CreateErrorResponse(
-                //    HttpStatusCode.BadRequest, actionContext.ModelState);
-                var errors = new Dictionary<string, IEnumerable<string>>();
-                foreach (KeyValuePair<string, ModelState> keyValue in actionContext.ModelState)
+                ///实体验证未通过
+                string ErrorMsg = string.Empty;
+                var ErrorsModel = actionContext.ModelState.Values.Where(item => { return item.Errors.Count >0 ; }).ToList().FirstOrDefault();
+                var ErrorsList = actionContext.ModelState.Values.Where(item => { return item.Errors.Count > 0; }).ToList();
+               
+                if (ErrorsList.Count>=0)
                 {
-                    errors[keyValue.Key] = keyValue.Value.Errors.Select(e => e.ErrorMessage);
+                    var Errors = ErrorsList.Select(i => i.Errors).ToList() ;
+                    List<string> errMsgs = new List<string>();
+                    foreach (var err in Errors)
+                    {
+                        errMsgs.AddRange(err.Select(i => i.ErrorMessage));
+                    }
+                    ErrorMsg = string.Join(";", errMsgs);
+                    //var test=Errors.Select(i=>)
                 }
                 actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.BadRequest, new
                 {
                     code = HttpStatusCode.BadRequest,//返回客户端的状态码
                     success = false,
-                    error = errors//显示验证错误的信息
+                    error = ErrorMsg//显示验证错误的信息
                 });
             }
         }
+    
     }
 }
