@@ -99,6 +99,9 @@ namespace webapi.Attributes
                     IJwtDecoder decoder = new JwtDecoder(serializer, validator, urlEncoder, algorithm);
                     //解密
                     auinfo = decoder.DecodeToObject<AuthInfo>(token, key, verify: true);
+                    ////管道传参
+                    var obj = new { username = auinfo.UserName, usercode = "testcode" };
+                    HttpContext.Current.Items["UserName"] = obj;
                 }
                 catch(Exception ex)
                 {

@@ -8,6 +8,8 @@ using System.Web.Http;
 using webapi.Attributes;
 using webapi.Models;
 using Mapster;
+using System.Web;
+
 namespace webapi.Controllers
 {
     public class DefaultController : ApiController
@@ -36,6 +38,8 @@ namespace webapi.Controllers
                 Tel = "123456789",
                 Address = "testddd"
             };
+            //获取管道传参
+            var userInfo= HttpContext.Current.Items["UserName"];
             return JsonConvert.SerializeObject(userInfo);
         }
         /// <summary>
