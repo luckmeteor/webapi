@@ -39,7 +39,7 @@ namespace webapi.Controllers
                 Address = "testddd"
             };
             //获取管道传参
-            var userInfo= HttpContext.Current.Items["UserName"];
+            var userData= HttpContext.Current.Items["UserName"];
             return JsonConvert.SerializeObject(userInfo);
         }
         /// <summary>
